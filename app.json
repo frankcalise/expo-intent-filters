@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -26,13 +28,25 @@
       "intentFilters": [
         {
           "action": "SEND",
-          "data": [{ "mimeType": "text/plain" }],
-          "category": ["DEFAULT"]
+          "data": [
+            {
+              "mimeType": "text/plain"
+            }
+          ],
+          "category": [
+            "DEFAULT"
+          ]
         }
-      ]
+      ],
+      "package": "com.frankcalise.ExpoIntentFilters"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "23847f24-165a-4055-80d9-1234b5459bdf"
+      }
     }
   }
 }

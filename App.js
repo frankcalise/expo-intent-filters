@@ -7,17 +7,20 @@ export default function App() {
   const [sharedData, setSharedData] = useState(null);
   const [sharedMimeType, setSharedMimeType] = useState(null);
 
+  // only works when the app is in the background, not fully closed
   const handleShare = useCallback((item) => {
-    if (!!item) {
+    console.log(item);
+    if (!item) {
       return;
     }
 
-    console.log(item);
-    // setSharedData(item.data[0].data);
-    // setSharedMimeType(item.data[0].mimeType);
+    setSharedData(item.data);
+    setSharedMimeType(item.mimeType);
     // You can receive extra data from your custom Share View
   }, []);
 
+  // supposed to handle receiving intent when app is closed according to docs
+  // but doesn't seem to be working?
   // useEffect(() => {
   //   ShareMenu.getInitialShare(handleShare);
   // }, []);
